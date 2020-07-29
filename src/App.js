@@ -45,7 +45,7 @@ class App extends React.Component {
 
   // call the ocv classifier collection API , (populated by after running ../scripts/text_classification.py)
   componentDidMount() {
-    axios.get(`https://mshack.free.beeceptor.com/ocv/1.1`)
+    axios.get(`YOUR ENDPOINT`)
       .then(res => {
         var classifiers = res.data;
         console.log(classifiers.length);
@@ -80,7 +80,7 @@ class App extends React.Component {
     console.log(appName);
 
    // request with url clicked to get the tasks list
-    axios.get(`https://mshack.free.beeceptor.com/tasks/app=` + appName + `/1.1`)
+    axios.get(`YOUR ENDPOINT`)
       .then(res => {
         let response = res.data;
         // response will be an array, process response to create tasks accordingly 
@@ -105,7 +105,7 @@ class App extends React.Component {
     // process each task list 
     for (var i = 0; i < tasks.length; i++) {
       let taskName = tasks[i]["title"];
-      axios.get(`https://mshack.free.beeceptor.com/execute/` + taskName + `/1.1`)
+      axios.get(`YOUR ENDPOINT`)
         .then(res => {
           let response = res.data;
           if (res.status === 200) {
@@ -134,89 +134,6 @@ class App extends React.Component {
           })
         })
     }
-
-    // uncomment these parts to run and test. 
-    // let tasks = [
-    //   {
-    //     title: 'App ID Domain Mapping',
-    //     status: -1,
-    //     isLoading: true,
-    //     errorMsg: "pending",
-    //   },
-    //   {
-    //     title: 'Fields Autofillibility Check',
-    //     status: -1,
-    //     isLoading: true,
-    //     errorMsg: "pending",
-    //   },
-    //   {
-    //     title: 'Assigned to Feature Team',
-    //     status: -1,
-    //     isLoading: true,
-    //     errorMsg: "pending",
-    //   },
-    //   {
-    //     title: 'Shipeed for next Release Cycle',
-    //     status: -1,
-    //     isLoading: true,
-    //     errorMsg: "pending",
-    //   }
-    // ];
-    // setTimeout(() => {
-    //   tasks[0].status = 1;
-    //   tasks[0].isLoading = false;
-    //   tasks[0].errorMsg = "SUCCESS";
-    //   getValuesForChart(tasks);
-    //   this.setState({
-    //     secondColumn: tasks,
-    //     datasets: [{
-    //       data: [p, s, e, q],
-    //     }]
-    //   })
-    // }, 2000)
-    // getValuesForChart(tasks);
-    // this.setState({
-    //   secondColumn: tasks,
-    //   datasets: [{
-    //     data: [p, s, e, q],
-    //   }]
-    // })
-    // setTimeout(() => {
-    //   tasks[1].status = 1;
-    //   tasks[1].isLoading = false;
-    //   tasks[1].errorMsg = "SUCCESS";
-    //   getValuesForChart(tasks);
-    //   this.setState({
-    //     secondColumn: tasks,
-    //     datasets: [{
-    //       data: [p, s, e, q],
-    //     }]
-    //   })
-    // }, 6000)
-    // setTimeout(() => {
-    //   tasks[2].status = 1;
-    //   tasks[2].isLoading = false;
-    //   tasks[2].errorMsg = "SUCCESS";
-    //   getValuesForChart(tasks);
-    //   this.setState({
-    //     secondColumn: tasks,
-    //     datasets: [{
-    //       data: [p, s, e, q],
-    //     }]
-    //   })
-    // }, 9000)
-    // setTimeout(() => {
-    //   tasks[3].status = 2;
-    //   tasks[3].isLoading = false;
-    //   tasks[3].errorMsg = "QUEUED";
-    //   getValuesForChart(tasks);
-    //   this.setState({
-    //     secondColumn: tasks,
-    //     datasets: [{
-    //       data: [p, s, e, q],
-    //     }]
-    //   })
-    // }, 11000)
 }
 
   // UI Part Rendering
@@ -280,3 +197,108 @@ class App extends React.Component {
 }
 
 export default App;
+
+// examples of variables used and code used for testing the flow
+    // for column 1
+    // const items = [
+    //   {
+    //     name: "Autofill",
+    //     label: "Autofill",
+    //     items: [
+    //       { name: "App", label: "App/Websites", onClick },
+    //     ]
+    //   },
+    //   "divider",
+    //   {
+    //     name: "Save Prompt",
+    //     label: "Save Prompt",
+    //     items: [
+    //       { name: "App", label: "App/Websites", onClick },
+    //     ]
+    //   }
+    // ];
+
+    // for column 2
+    // let tasks = [
+    //   {
+    //     title: 'App ID Domain Mapping',
+    //     status: -1,
+    //     isLoading: true,
+    //     errorMsg: "pending",
+    //   },
+    //   {
+    //     title: 'Fields Autofillibility Check',
+    //     status: -1,
+    //     isLoading: true,
+    //     errorMsg: "pending",
+    //   },
+    //   {
+    //     title: 'Assigned to Feature Team',
+    //     status: -1,
+    //     isLoading: true,
+    //     errorMsg: "pending",
+    //   },
+    //   {
+    //     title: 'Shipped for next Release Cycle',
+    //     status: -1,
+    //     isLoading: true,
+    //     errorMsg: "pending",
+    //   }
+    // ];
+
+    // for column 3
+    // setTimeout(() => {
+    //   tasks[0].status = 1;
+    //   tasks[0].isLoading = false;
+    //   tasks[0].errorMsg = "SUCCESS";
+    //   getValuesForChart(tasks);
+    //   this.setState({
+    //     secondColumn: tasks,
+    //     datasets: [{
+    //       data: [p, s, e, q],
+    //     }]
+    //   })
+    // }, 2000)
+    // getValuesForChart(tasks);
+    // this.setState({
+    //   secondColumn: tasks,
+    //   datasets: [{
+    //     data: [p, s, e, q],
+    //   }]
+    // })
+    // setTimeout(() => {
+    //   tasks[1].status = 1;
+    //   tasks[1].isLoading = false;
+    //   tasks[1].errorMsg = "SUCCESS";
+    //   getValuesForChart(tasks);
+    //   this.setState({
+    //     secondColumn: tasks,
+    //     datasets: [{
+    //       data: [p, s, e, q],
+    //     }]
+    //   })
+    // }, 6000)
+    // setTimeout(() => {
+    //   tasks[2].status = 1;
+    //   tasks[2].isLoading = false;
+    //   tasks[2].errorMsg = "SUCCESS";
+    //   getValuesForChart(tasks);
+    //   this.setState({
+    //     secondColumn: tasks,
+    //     datasets: [{
+    //       data: [p, s, e, q],
+    //     }]
+    //   })
+    // }, 9000)
+    // setTimeout(() => {
+    //   tasks[3].status = 2;
+    //   tasks[3].isLoading = false;
+    //   tasks[3].errorMsg = "QUEUED";
+    //   getValuesForChart(tasks);
+    //   this.setState({
+    //     secondColumn: tasks,
+    //     datasets: [{
+    //       data: [p, s, e, q],
+    //     }]
+    //   })
+    // }, 11000)
