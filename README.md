@@ -1,58 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+copyright @Microsoft Hackathon 2020
 
-## Available Scripts for ML automation
+## HyperAutomation - MMX and Beyond[WIP]
 
-In the project directory, you can run:
+ In simple words, hyperautomation refers to the mixture of automation technologies that exist to augment and expand human capabilities. 
 
-### `npm start`
+ According to Gartner - Enterprise architecture and technology innovation leaders lack a defined strategy to scale automation with tactical and strategic goals. They must deliver end-to-end automation beyond RPA by combining complementary technologies to augment business processes.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Problem Statement
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+For any business / product to be successful, it is very important to address the customer queries timely. Any delay in queries may have direct impact on the profit and the reputation of the product built  over years. 
 
-### `npm test`
+## Solution
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The solution that we are proposing is hyperautomation. First, all the feedbacks are collected at a common store , 
+These feedback are in “free text “ format, from these feedbacks, we will extract the intent by running a machine learning text classification algorithm and then map these automated intents/insights derived, to the corresponding tasks to be performed and re-route them to the respective processes automatically.
 
-### `npm run build`
+## Machine Learning text classification algorithm
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Python script can be found in ./scripts/text_classification.py
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## UI 
+ 
+This project is created with `npx create-react-app PROJECT_NAME`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+To run -
+1. Clone this project using `git clone https://github.com/aykejriw/HyperAutomation.git`
+2. Do `npm i` to install dependencies
+3. Run `npm start`
